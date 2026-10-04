@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Finance - Expense Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen">
+        <div class="welcome-content">
+            <div class="welcome-planet">🪐</div>
+            <p class="welcome-label">YOUR COSMIC MONEY MANAGER</p>
+
+            <div class="brand">
+                <span class="brand-icon">✦</span>
+                <span>GALAXY FINANCE</span>
+            </div>
+
+            <h1>Manage Money Across the Universe</h1>
+
+            <p class="dashboard-subtitle">
+                Split expenses. Share fairly. Stay in orbit.
+            </p>
+
+            <div class="privacy-tag">
+                ✦ Private by design · No login required
+            </div>
+
+            <button id="enterGalaxy">Enter Galaxy ✦</button>
+        </div>
+    </div>
+
+    <!-- Space Decorations -->
+    <div class="space-decoration" aria-hidden="true">
+        <div class="planet planet-one"></div>
+        <div class="planet planet-two"></div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+    </div>
+
+    <!-- Home Dashboard -->
+    <div class="container" id="home">
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+            <span>GALAXY FINANCE</span>
+        </div>
+
+        <h1>Manage Money Across the Universe</h1>
+
+        <p class="dashboard-subtitle">
+            Split expenses. Share fairly. Stay in orbit.
+        </p>
+
+        <div class="privacy-tag">
+            ✦ Private by design · No login required
+        </div>
+
+        <button onclick="startProject()">Create Group</button>
+    </div>
+
+    <!-- Roommates Section -->
+    <div class="container" id="groupSection" style="display: none;">
+        <h2>Add Roommates</h2>
+
+        <input id="name" type="text" placeholder="Enter roommate name">
+
+        <button onclick="addPerson()">Add Person</button>
+
+        <ul id="people"></ul>
+
+        <button onclick="nextStep()">Continue</button>
+    </div>
+
+    <!-- Expense Section -->
+    <div class="container" id="expenseSection" style="display: none;">
+        <h2>Add Expense</h2>
+
+        <input id="expenseName" type="text" placeholder="Expense name">
+
+        <input
+            id="amount"
+            type="number"
+            min="0.01"
+            step="0.01"
+            placeholder="Amount in ₹"
+        >
+
+        <p>Who paid?</p>
+
+        <select id="paidBy"></select>
+
+        <p>Expense will be shared equally by all roommates.</p>
+
+        <button onclick="addExpense()">Add Expense</button>
+
+        <!-- Dashboard Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-icon">💰</span>
+                <p>Total Expenses</p>
+                <h2 id="total">₹0.00</h2>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">🧾</span>
+                <p>Number of Expenses</p>
+                <h2 id="expenseCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">🪐</span>
+                <p>Share Per Person</p>
+                <h2 id="personShare">₹0.00</h2>
+            </div>
+        </div>
+
+        <!-- Expense History -->
+        <h3>Expense History</h3>
+        <ul id="expenseList"></ul>
+
+        <!-- Reset -->
+        <button onclick="resetGroup()">Reset Group</button>
+
+        <!-- Balances -->
+        <h3>Balances</h3>
+        <ul id="balances"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
